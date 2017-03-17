@@ -23,7 +23,7 @@ def show_image(image):
 
 
 def rotation(image):
-    ang = random() * 360
+    ang = random() * 10
     rows, cols, ch = image.shape
     Rot_M = cv2.getRotationMatrix2D((cols / 2, rows / 2), ang, 1)
     dst = cv2.warpAffine(image, Rot_M, (cols, rows))
@@ -31,8 +31,8 @@ def rotation(image):
 
 def translation(image):
     rows, cols, ch = image.shape
-    deltax = random() * 5
-    deltay = random() * 5
+    deltax = random() * 3
+    deltay = random() * 3
     M = np.float32([[1, 0, deltax], [0, 1, deltay]])
     dst = cv2.warpAffine(image, M, (cols, rows))
     return dst
@@ -53,3 +53,21 @@ def transform(image):
     image = augment_brightness_camera_images(image)
     return image
 
+def display_images(X_train, y_train, n_rows, n_cols, graph_title='Sample Training Images'):
+    '''
+    Simple utility function for displaying images.
+    '''
+    plt.figure(figsize=(8, 6.5))
+    selected_classes = np.random.randint(44, size=n_rows)
+    image_number = 1
+    for row in selected_classes:
+        for col in range(1, n_cols + 1):
+            plt.subplot(n_rows, n_cols, image_number)
+            image_number += 1
+            x_selected = X_train[y_train == row]
+            random_index = np.random.randint(x_selected.shape[0])
+            plt.imshow(x_selected[random_index, :, :, :]) 
+            plt.axis('off')
+            plt.title('class: {}'.format(row))  
+    plt.suptitle(graph_title)
+    plt.show()
