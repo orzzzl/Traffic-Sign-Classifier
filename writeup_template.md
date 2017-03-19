@@ -120,7 +120,7 @@ Dropout | 50% |
 | Fully connected		| Input: 2x2x64 = 256, Output: 43     									|
 RELU||
 Dropout | 50% |
-Softmax				| etc.        		|
+Softmax				|       		|
 Regulation | L2 regulation|
  
 
@@ -175,6 +175,25 @@ Here are five German traffic signs that I found on the web:
 ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
 
+Pic1: 
+
+Most traffic signs are tri-angles. And this traffic sign is round. Not sure if this will cause some problem on recognization the effective parts of the picture.
+
+Pic2:
+
+The traffic sign is a little bit small and this may cause problem.
+
+Pic3:
+
+Perfect traffic sign picture. Nothing to complain about this pic.
+
+Pic4:
+
+Also the traffic sign is not tri-angle. But again this may not be a problem at all.
+
+Pic5:
+
+The traffic sign is pretty small and has an angle with the z-direction.
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -191,7 +210,7 @@ Here are the results of the prediction:
 | Road work			| Road work   							|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 5 of the 5 traffic signs, which gives an accuracy of 100%. This compares favorably to the accuracy on the test set of 99.8. Seems doing a good job here.
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
